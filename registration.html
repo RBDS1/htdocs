@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Регистрация на конференцию
+</title>
+<meta charset="UTF-8">
+<meta name="description" content="Описание содержимого страницы">
+<meta name="keywords" content="ключевые слова через запятую">
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+   
+    <header>
+        <!--<h1>ПТИ</h1>-->
+        <img src="images/image1.png" width="1250">
+        <nav>
+            <table id="Tnav">
+                <tbody>
+                    <tr>
+                        <td id="Pnav" onclick="window.location.href='index.html'">
+                            <a href="index.html">Главная</a>
+                        </td>
+                        <td id="Pnav" onclick="window.location.href='registration.html'">
+                            <a href="registration.html">Регистрация</a>
+                        </td>   
+                    </tr>
+                </tbody>
+            </table>            
+        </nav> 
+    </header>    
+    <main>
+        <h1>Регистрация на конференцию</h1>     
+        <form action="NewUser.php" method="post">
+        <table align="center">
+            <tbody>
+                
+                <tr>  
+                    <td id="first">
+                        <h2>Данные участника</h2>                        
+                        <input type="text" name="Surname" placeholder="Фамилия" required pattern="[а-яА-Я]+" title="Фамилия должна быть написана русскими буквами"><br>
+                        <input type="text" name="firstname" placeholder="Имя" required pattern="[а-яА-Я]+" title="Имя должно быть написано русскими буквами"><br>
+                        <input type="text" name="Secondname" placeholder="Отчество" required pattern="[а-яА-Я]+" title="Отчество должно быть написано русскими буквами"><br>
+                        <input type="date" name="Birthdate" placeholder="Дата рождения"><br>
+                        <input type="radio" name="gender" value="Мужской" required>Мужской
+                        <input type="radio" name="gender" value="Женский" required>Женский<br>                        
+                    </td>                  
+                    
+                    <td id="first">
+                        <h2>Контактные данные</h2>
+                        <input type="tel" name="TelN" placeholder="Контактный номер" required pattern="\+7\d{10}" title="Формат: +71234567890"><br>
+                        <input type="email" name="EM" placeholder="Email" required><br>
+                        <input type="text" name="Cont" placeholder="Дополнительные данные"><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="second">
+                        <h2>Направление</h2>
+                       <select required name="subject">                          
+                            <option value="" style="display:none" >Выберите</option>          
+                            <option value="Математика">Математика</option>
+                            <option value="Физика">Физика</option>
+                            <option value="Химия">Химия</option>
+                            <option value="Биология">Биология</option>
+                            <option value="Информатика">Информатика</option>
+                            <option value="География">География</option>
+                        </select><br><br>
+                        <input type="checkbox" name="report" onclick="if(this.checked){NX.disabled=false}else {NX.disabled=true;  NX.value='';}">Участие с докладом<br>
+                        
+                    </td>
+                    <td id="second">
+                        <h2>Тема доклада</h2> <br>  
+                        <textarea name="NX" disabled></textarea><br>
+                    </td>
+                </tr>                
+                <tr>
+                    <td colspan="2" id="third">                        
+                        <button type="submit" value="Отправить">Отправить</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </form>
+    </main>    
+    <footer>
+        <h3>Университет Дубна</h3>
+        <h3>2022 год</h3>
+    </footer>
+</body>
+</html>
